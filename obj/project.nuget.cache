@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "SSm+3F+M7+CPurV7Y9s4onj6mDMuMfLcO3eRGcA6G3CyKZSVYBI/FmRUWrkSzx0yOGjP3edVdVHWixszNj+FJQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\weeng\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\testingyharim\\testingyharim.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\weeng\\.nuget\\packages\\tmodloader.codeassist\\0.1.5\\tmodloader.codeassist.0.1.5.nupkg.sha512"
+  ],
+  "logs": []
+}

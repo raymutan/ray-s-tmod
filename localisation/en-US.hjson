@@ -1,0 +1,21 @@
+﻿Mods:{
+    testingyharim:{
+        ItemName:{
+         Yharimsword:"godslayer sword"
+         tutorialitem:"generic item"
+        }
+    
+        ItemToolTip:{
+
+        
+        }
+
+        ItemSetBonus:{
+            yharimset:"Tyrant's rage. Basically you no die"
+        }
+        MapObject:{
+        
+        }
+    }
+
+}
