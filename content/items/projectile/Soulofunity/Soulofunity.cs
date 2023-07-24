@@ -22,7 +22,7 @@ namespace testingyharim.content.items.projectile.Soulofunity {
 
         ProjectileID.Sets.MinionTargettingFeature[Projectile.type] = true;
 
-        // These below are needed for a minion
+       
         // Denotes that this projectile is a pet or minion
         Main.projPet[Projectile.type] = true;
         // This is needed so your minion can properly spawn when summoned and replaced when other minions are summoned
@@ -38,7 +38,7 @@ namespace testingyharim.content.items.projectile.Soulofunity {
         Projectile.tileCollide = false;
 
         // These below are needed for a minion weapon
-        // Only controls if it deals damage to enemies on contact (more on that later)
+        // Only controls if it deals damage to enemies on contact 
         Projectile.friendly = true;
         // Only determines the damage type
         Projectile.minion = true;
@@ -85,21 +85,20 @@ namespace testingyharim.content.items.projectile.Soulofunity {
         float minionPositionOffsetX = (10 + Projectile.minionPos * 40) * -player.direction;
         idlePosition.X += minionPositionOffsetX; // Go behind the player
 
-        // All of this code below this line is adapted from Spazmamini code (ID 388, aiStyle 66)
+     
 
         // Teleport to player if distance is too big
         Vector2 vectorToIdlePosition = idlePosition - Projectile.Center;
         float distanceToIdlePosition = vectorToIdlePosition.Length();
         if (Main.myPlayer == player.whoAmI && distanceToIdlePosition > 2000f)
         {
-            // Whenever you deal with non-regular events that change the behavior or position drastically, make sure to only run the code on the owner of the projectile,
-            // and then set netUpdate to true
+           
             Projectile.position = idlePosition;
             Projectile.velocity *= 0.1f;
             Projectile.netUpdate = true;
         }
 
-        // If your minion is flying, you want to do this independently of any conditions
+        
         float overlapVelocity = 0.04f;
         for (int i = 0; i < Main.maxProjectiles; i++)
         {
@@ -148,7 +147,7 @@ namespace testingyharim.content.items.projectile.Soulofunity {
                     bool inRange = between < distanceFromTarget;
                     bool lineOfSight = Collision.CanHitLine(Projectile.position, Projectile.width, Projectile.height, npc.position, npc.width, npc.height);
                     // Additional check for this specific minion behavior, otherwise it will stop attacking once it dashed through an enemy while flying though tiles afterwards
-                    // The number depends on various parameters seen in the movement code below. Test different ones out until it works alright
+                   
                     bool closeThroughWall = between < 100f;
                     if (((closest && inRange) || !foundTarget) && (lineOfSight || closeThroughWall))
                     {
@@ -160,10 +159,6 @@ namespace testingyharim.content.items.projectile.Soulofunity {
             }
         }
 
-        // friendly needs to be set to true so the minion can deal contact damage
-        // friendly needs to be set to false so it doesn't damage things like target dummies while idling
-        // Both things depend on if it has a target or not, so it's just one assignment here
-        // You don't need this assignment if your minion is shooting things instead of dealing contact damage
         Projectile.friendly = foundTarget;
         #endregion
 
