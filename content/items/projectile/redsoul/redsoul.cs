@@ -9,19 +9,7 @@ using Terraria.ModLoader;
 namespace testingyharim.content.items.projectile.redsoul
 {
 
-    /*
-         * This file contains all the code necessary for a minion
-         * - ModItem
-         *     the weapon which you use to summon the minion with
-         * - ModBuff
-         *     the icon you can click on to despawn the minion
-         * - ModProjectile 
-         *     the minion itself
-         *     
-         * It is not recommended to put all these classes in the same file. For demonstrations sake they are all compacted together so you get a better overwiew.
-         * To get a better understanding of how everything works together, and how to code minion AI, read the guide: https://github.com/tModLoader/tModLoader/wiki/Basic-Minion-Guide
-         * This is NOT an in-depth guide to advanced minion AI
-         */
+
 
     public class RedsoulBuff : ModBuff
     {
@@ -103,15 +91,7 @@ namespace testingyharim.content.items.projectile.redsoul
 
 
 
-        /*
-         * This minion shows a few mandatory things that make it behave properly. 
-         * Its attack pattern is simple: If an enemy is in range of 43 tiles, it will fly to it and deal contact damage
-         * If the player targets a certain NPC with right-click, it will fly through tiles to it
-         * If it isn't attacking, it will float near the player with minimal movement
-
-
-
-         */
+     
         public class Redsoul : ModProjectile
         {
             public override void SetStaticDefaults()
@@ -260,10 +240,7 @@ namespace testingyharim.content.items.projectile.redsoul
                     }
                 }
 
-                // friendly needs to be set to true so the minion can deal contact damage
-                // friendly needs to be set to false so it doesn't damage things like target dummies while idling
-                // Both things depend on if it has a target or not, so it's just one assignment here
-                // You don't need this assignment if your minion is shooting things instead of dealing contact damage
+     
                 Projectile.friendly = foundTarget;
                 #endregion
 
