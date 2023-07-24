@@ -18,8 +18,7 @@ namespace testingyharim.content.items.armour.yharimarmour
             DisplayName.SetDefault("Tyrant's Armor");
             Tooltip.SetDefault("25 % increased damage, 25 % increased critical chance and melee speed.\nIncreased max life and mana by 150\nEnemies receive an unholy amount of damage when touching you");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-            ArmorIDs.Head.Sets.DrawHead[Item.headSlot] = false;//dont draw head
-
+            ArmorIDs.Head.Sets.DrawHead[Item.headSlot] = false;
         }
 
         public override void SetDefaults()
