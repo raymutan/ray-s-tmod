@@ -69,12 +69,39 @@ namespace testingyharim.content.items.armour.Unitedsoularmor
 
 
         {
+            //to have the respective buffs
             player.setBonus = Language.GetTextValue("Mods.testingyharim.ItemSetBonus.yharimset");
             if (player.FindBuffIndex(ModContent.BuffType<SoulofunityBuff>()) == -1)
             {
                 player.AddBuff(ModContent.BuffType<SoulofunityBuff>(), 3600, true, false);
             }
 
+              if (player.FindBuffIndex(ModContent.BuffType<RedsoulBuff>()) == -1)
+            {
+                player.AddBuff(ModContent.BuffType<RedsoulBuff>(), 3600, true, false);
+            }
+
+
+            if (player.FindBuffIndex(ModContent.BuffType<BluesoulBuff>()) == -1)
+            {
+                player.AddBuff(ModContent.BuffType<BluesoulBuff>(), 3600, true, false);
+            }
+
+            if (player.FindBuffIndex(ModContent.BuffType<YellowsoulBuff>()) == -1)
+            {
+                player.AddBuff(ModContent.BuffType<YellowsoulBuff>(), 3600, true, false);
+            }
+
+            if (player.FindBuffIndex(ModContent.BuffType<PurplesoulBuff>()) == -1)
+            {
+                player.AddBuff(ModContent.BuffType<PurplesoulBuff>(), 3600, true, false);
+            }
+
+            if (player.FindBuffIndex(ModContent.BuffType<GreensoulBuff>()) == -1)
+            {
+                player.AddBuff(ModContent.BuffType<GreensoulBuff>(), 3600, true, false);
+            }
+            // summon all the minions when worn
             if (player.ownedProjectileCounts[ModContent.ProjectileType<Soulofunity>()] < 1)//soul of unity damage and summon
             {
                 int baseDamage = 200;
